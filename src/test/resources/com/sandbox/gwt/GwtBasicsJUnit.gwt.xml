@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module rename-to="GwtBasics">
+  <!-- Inherit our applications main module.                      -->
+  <inherits name='com.sandbox.gwt.GwtBasics' />
+
+  <!-- Specify the path to any remote services.                   -->
+  <servlet path="/GwtBasics/greet" class="com.sandbox.gwt.server.GreetingServiceImpl" />
+
+</module>
