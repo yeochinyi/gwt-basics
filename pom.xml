@@ -84,6 +84,7 @@
 					<modules>
 						<module>com.sandbox.gwt.GwtBasics</module>
 					</modules>
+					<copyWebapp>true</copyWebapp>
 				</configuration>
 			</plugin>
 
@@ -99,8 +100,8 @@
 						</connector>
 					</connectors>
 					<webApp>
-<!-- 					<contextPath>/${build.finalName}</contextPath> -->
-					<contextPath>/GwtBasics</contextPath>
+						<!-- <contextPath>/${build.finalName}</contextPath> -->
+						<contextPath>/GwtBasics</contextPath>
 						<baseResource implementation="org.eclipse.jetty.util.resource.ResourceCollection">
 							<resourcesAsCSV>src/main/webapp,target/gwt-basics-1.0-SNAPSHOT</resourcesAsCSV>
 						</baseResource>
@@ -109,7 +110,19 @@
 
 			</plugin>
 
-
+	<!-- Separate GwtTest tests from standard unit tests -->
+			<plugin>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>2.6</version>
+				<configuration>
+					<excludes>
+						<exclude>**/*GwtTest.java</exclude>
+					</excludes>
+			<includes>
+				<include>**/Gwt*Suite.java</include>
+			</includes>
+				</configuration>
+			</plugin>
 
 
 		</plugins>

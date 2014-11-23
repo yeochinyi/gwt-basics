@@ -16,7 +16,7 @@ import com.google.gwt.user.client.rpc.ServiceDefTarget;
  * See http://mojo.codehaus.org/gwt-maven-plugin/user-guide/testing.html 
  * for details.
  */
-public class GwtTestGwtBasics extends GWTTestCase {
+public class MyClassTestGwt extends GWTTestCase {
 
   /**
    * Must refer to a valid module that sources this class.
@@ -43,7 +43,8 @@ public class GwtTestGwtBasics extends GWTTestCase {
    */
   public void testGreetingService() {
     // Create the service that we will test.
-    GreetingServiceAsync greetingService = GWT.create(GreetingService.class);
+    //GreetingServiceAsync greetingService = GWT.create(GreetingService.class);
+    GreetingServiceAsync greetingService = GreetingServiceAsync.Util.getInstance();
     ServiceDefTarget target = (ServiceDefTarget) greetingService;
     target.setServiceEntryPoint(GWT.getModuleBaseURL() + "GwtBasics/greet");
 
