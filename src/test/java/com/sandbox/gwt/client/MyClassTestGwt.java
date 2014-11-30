@@ -1,5 +1,9 @@
 package com.sandbox.gwt.client;
 
+import javax.naming.InitialContext;
+import javax.naming.NamingException;
+import javax.sql.DataSource;
+
 import com.sandbox.gwt.shared.FieldVerifier;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.junit.client.GWTTestCase;
@@ -42,6 +46,10 @@ public class MyClassTestGwt extends GWTTestCase {
    * GreetingService and verify the response.
    */
   public void testGreetingService() {
+	  
+
+
+	  
     // Create the service that we will test.
     //GreetingServiceAsync greetingService = GWT.create(GreetingService.class);
     GreetingServiceAsync greetingService = GreetingServiceAsync.Util.getInstance();

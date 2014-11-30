@@ -54,6 +54,19 @@
 			<version>4.11</version>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+			<groupId>simple-jndi</groupId>
+			<artifactId>simple-jndi</artifactId>
+			<version>0.11.1</version>
+<!-- 			<scope>test</scope> -->
+		</dependency>
+		<dependency>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+			<version>1.4.182</version>
+<!-- 			<scope>test</scope> -->
+		</dependency>
+
 	</dependencies>
 
 	<build>
@@ -110,7 +123,7 @@
 
 			</plugin>
 
-	<!-- Separate GwtTest tests from standard unit tests -->
+			<!-- Separate GwtTest tests from standard unit tests -->
 			<plugin>
 				<artifactId>maven-surefire-plugin</artifactId>
 				<version>2.6</version>
@@ -118,9 +131,9 @@
 					<excludes>
 						<exclude>**/*GwtTest.java</exclude>
 					</excludes>
-			<includes>
-				<include>**/Gwt*Suite.java</include>
-			</includes>
+					<includes>
+						<include>**/Gwt*Suite.java</include>
+					</includes>
 				</configuration>
 			</plugin>
 
